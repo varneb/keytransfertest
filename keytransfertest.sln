@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "keytransferserver", "keytransferserver\keytransferserver.csproj", "{6CB89D82-D97F-4CDD-8E9A-036F61E07910}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "keytransfertestclient", "keytransfertestclient\keytransfertestclient.csproj", "{3E897AB3-3690-4F43-8AB4-89DD77C26B78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CB89D82-D97F-4CDD-8E9A-036F61E07910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CB89D82-D97F-4CDD-8E9A-036F61E07910}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CB89D82-D97F-4CDD-8E9A-036F61E07910}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CB89D82-D97F-4CDD-8E9A-036F61E07910}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E897AB3-3690-4F43-8AB4-89DD77C26B78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E897AB3-3690-4F43-8AB4-89DD77C26B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E897AB3-3690-4F43-8AB4-89DD77C26B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E897AB3-3690-4F43-8AB4-89DD77C26B78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5705DAF7-E754-4DEE-B07C-79C3F5B0A8F5}
+	EndGlobalSection
+EndGlobal
