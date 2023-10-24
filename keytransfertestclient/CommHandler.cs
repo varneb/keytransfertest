@@ -2,11 +2,16 @@
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace keytransferserver
 {
     internal class CommHandler
     {
+
+        //test
+        public event EventHandler ConnectF;
+
         public bool IsConnected { get; private set; } // Read-only property
         public event EventHandler<MessageReceivedEventArgs> MessageReceived;
         protected TcpClient client;
@@ -31,6 +36,7 @@ namespace keytransferserver
             }
             catch (Exception e)
             {
+                ConnectF?.Invoke(this, new EventArgs());
                 Console.WriteLine($"Error connecting to {ipAddress}:{port}: {e}");
             }
         }

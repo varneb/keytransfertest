@@ -19,9 +19,13 @@ namespace keytransfertestclient
             this._communication = communication;
             InitializeComponent();
             _communication.MessageReceived += CommHandler_MessageReceived;
+            _communication.ConnectF += CommHandler_ConnectF;
         }
+        //this function would be out of the form.
         private void CommHandler_MessageReceived(object sender, MessageReceivedEventArgs e)
         {
+            //_ = ((CommHandler)sender).SendMessageAsync(e.Message);
+            if (this.InvokeRequired) this.textBox1.Text += "INVOKE";
             string message = e.Message;
             // Handle the received message in your WinForm
             UpdateUIWithMessage(message);
@@ -29,7 +33,16 @@ namespace keytransfertestclient
         private void UpdateUIWithMessage(string message)
         {
             // Update your WinForm UI controls with the received message
-            this.textBox1.Text += message;
+            if (textBox1.InvokeRequired)
+            {
+                //textBox1.BeginInvoke(new Action(() => textBox1.Text = "Updated asynchronously from non-UI thread"));
+                textBox1.Invoke(new Action(() => textBox1.Text += "Updated from non-UI thread" + message));
+
+            }
+            else
+            {
+                textBox1.Text += "Updated from UI thread" + message;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -39,7 +52,11 @@ namespace keytransfertestclient
 
         private void button2_Click(object sender, EventArgs e)
         {
-            _ = _communication.SendMessageAsync("hellp");
+            _ = _communication.SendMessageAsync("hello");
+        }
+        private void CommHandler_ConnectF(object sender, EventArgs e)
+        {
+            MessageBox.Show("FFFFFFFFFFFFF");
         }
     }
 }
