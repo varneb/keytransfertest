@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace keytransferserver
@@ -60,6 +61,7 @@ namespace keytransferserver
         }
         public async Task SendMessageAsync(string msg)
         {
+            //Thread.Sleep(3000);
             try
             {
                 Console.WriteLine("server -> " + msg);

@@ -24,7 +24,6 @@ namespace keytransferserver
 
             // Start listening to incoming connection requests
             listener.Start();
-
             // infinite loop.
             while (true)
             {
@@ -35,6 +34,11 @@ namespace keytransferserver
                 // serve multiple clients at the same time.
                 TcpClient client = listener.AcceptTcpClient();
                 CommHandler handler = new CommHandler(client);
+
+                TcpClient clientB = listener.AcceptTcpClient();
+                CommHandler handlerB = new CommHandler(clientB);
+                _ = handler.SendMessageAsync("otherclientconnected ");
+                //Console.ReadLine();
             }
         }
     }
