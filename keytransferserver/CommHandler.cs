@@ -26,7 +26,7 @@ namespace keytransferserver
         public void StartRead()
         {
             IsConnected = true;
-            _ = ReceiveMessageAsync();
+            Task.Run(() =>ReceiveMessageAsync());
 
         }
         private async Task ReceiveMessageAsync()

@@ -25,7 +25,6 @@ namespace keytransfertestclient
         private void CommHandler_MessageReceived(object sender, MessageReceivedEventArgs e)
         {
             //_ = ((CommHandler)sender).SendMessageAsync(e.Message);
-            if (this.InvokeRequired) this.textBox1.Text += "INVOKE";
             string message = e.Message;
             // Handle the received message in your WinForm
             UpdateUIWithMessage(message);

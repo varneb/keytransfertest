@@ -32,7 +32,7 @@ namespace keytransferserver
                 IsConnected = true;
 
                 // Now that you're connected, you can start receiving messages.
-                await ReceiveMessageAsync();
+                await Task.Run(() =>ReceiveMessageAsync());
             }
             catch (Exception e)
             {
